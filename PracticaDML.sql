@@ -187,3 +187,41 @@ go
 insert into TEmpleado (cNif, cNombre, cApellido, nDepartamentoID, nCargoID, nSalario, nEdad, cCorreo, cGenero, dFechaNacimiento) values 
 ('0001', 'Frustrado', 'Error', 2, 3, -500, 25, 'error.salario@empresa.com', 'M', '2001-01-01');
 go
+
+update TEmpleado 
+set nSalario = nSalario * 1.10;
+go
+
+update TEmpleado 
+set nSalario = nSalario * 1.20 
+where nDepartamentoID = 2;
+go
+
+update TEmpleado 
+set cCorreo = 'carlos.m_nuevo@empresa.com' 
+where nEmpleadoID = 1;
+go
+
+update TEmpleado 
+set nCargoID = 1 
+where nEmpleadoID = 3;
+go
+
+update TEmpleado 
+set nDepartamentoID = 3 
+where nEmpleadoID in (5, 6);
+go
+
+update TEmpleado 
+set bActivo = 0 
+where nSalario < 500;
+go
+
+update TProyecto 
+set FechaFinalizacion = '2026-08-15' 
+where nProyectoID = 2;
+go
+
+insert into TEmpleadoProyecto (nEmpleadoID, nProyectoID) values 
+(3, 3);
+go
